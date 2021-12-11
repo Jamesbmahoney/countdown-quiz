@@ -12,15 +12,33 @@ h1 {
     margin-bottom: auto;
 }
 
+p {
+    color: #ffff;
+    margin-bottom: auto;
+}
+
 .container {
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 0 auto;
-    padding: 0;
+    padding: 0 300px 0 300px;
 }
 
+.btn {
+    font-size: larger;
+    padding: 2px 0;
+    text-align: center;
+    margin-bottom: 1px;
+    text-decoration: none;
+    color: #ffff;
+    border-radius: 4px;
+}
 
-
+.btn:hover {
+    cursor: pointer;
+    box-shadow: rgb(192, 125, 113);
+    transition: transform 150ms;
+    transform: scale(1.03);
+}
