@@ -7,11 +7,17 @@
     <title>Countdown Quiz</title>
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-<header><a href="/highscores.html" id="highscore-btn">View High Score</a>
+<header>
+<div>
+    <a href="/highscores.html" id="highscore-btn">View High Score</a> 
+</div>
+<div class="time-section" id="timer">
+    Time: <span id="time">0</span>
+</div>
 </header>
 <body>
-    <section class="container">
-        <div id="home">
+    <section id="start-screen" class="show">
+        <div>
             <h1>Welcome to the Quiz!</h1>
             <p>Try and answer the following questions within the time limit.  Each incorrect answer will take 10 seconds off your time.  Record your high score at the end!</p>           
         </div>
@@ -20,7 +26,7 @@
         </div>   
     </section>
 
-    <section class="quiz" class="hide">
+    <section quiz="quiz" class="hide">
         <div>
             <h3 id="question"></h3>
         </div>
