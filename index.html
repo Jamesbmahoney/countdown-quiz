@@ -5,9 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown Quiz</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="questionsheet" href="/assets/js/questions.js">
-    <link rel="script" href="/assets/js/script.js">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 
@@ -20,7 +18,7 @@
                 <a href="/highscores.html">High Score</a>
             </div>
             <div id="timer">
-                Time: <span id="countdown">0</span>
+                Time: <span id="count-clock">0</span>
             </div>
         </header>   
         <!-- Quiz Start Screen -->
@@ -31,17 +29,25 @@
                     Any incorrect answer will take 10 seconds off your time.
                     At the end, record your initials along with your high score! 
                 </p>
-                <button class="start-button">Start!</button>
+                <button class="start-button" id="start-btn">Start!</button>
             </div>
         </section>
         <!-- Quiz Questions Screen -->
-        <section>
+        <section class="hide" id="quiz-questions">
+            <div class="quests">
+                <h3 id="question-section"></h3>
+            </div>
+            <div class="answers">
 
+            </div>    
         </section>    
         <!-- High Score Screen -->
         <section>
 
         </section>
         </div>
+
+        <script src="./assets/js/script.js"></script>
+        <script src="./assets/js/questions.js"></script>
 </body>
 </html>
