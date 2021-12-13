@@ -6,33 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown Quiz</title>
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="questionsheet" href="/assets/js/questions.js">
+    <link rel="script" href="/assets/js/script.js">
 </head>
-<header>
-<div>
-    <a href="/highscores.html" id="highscore-btn">View High Score</a> 
-</div>
-<div class="time-section" id="timer">
-    Time: <span id="time">0</span>
-</div>
-</header>
-<body>
-    <section id="start-screen" class="show">
-        <div>
-            <h1>Welcome to the Quiz!</h1>
-            <p>Try and answer the following questions within the time limit.  Each incorrect answer will take 10 seconds off your time.  Record your high score at the end!</p>           
-        </div>
-        <div>
-        <button id="start-btn" class="btn">Start!</button> 
-        </div>   
-    </section>
 
-    <section quiz="quiz" class="hide">
-        <div>
-            <h3 id="question"></h3>
+
+
+<body>
+    <!-- High Score Link and Timer -->
+    <div class="content">
+        <header class="box">
+            <div id="highscore">
+                <a href="/highscores.html">High Score</a>
+            </div>
+            <div id="timer">
+                Time: <span id="countdown">0</span>
+            </div>
+        </header>   
+        <!-- Quiz Start Screen -->
+        <section class="show" id="start-page">
+            <div>
+                <h1>Welcome to the Countdown Quiz!</h1>
+                <p>Answer all five questions within the time limit.
+                    Any incorrect answer will take 10 seconds off your time.
+                    At the end, record your initials along with your high score! 
+                </p>
+                <button class="start-button">Start!</button>
+            </div>
+        </section>
+        <!-- Quiz Questions Screen -->
+        <section>
+
+        </section>    
+        <!-- High Score Screen -->
+        <section>
+
+        </section>
         </div>
-        <div>
-            <h3 id="choices"></h3>
-        </div>
-    </section>   
 </body>
 </html>
