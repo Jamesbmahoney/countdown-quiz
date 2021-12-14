@@ -29,7 +29,7 @@
                     Any incorrect answer will take 10 seconds off your time.
                     At the end, record your initials along with your high score! 
                 </p>
-                <button class="start-button" id="start-btn">Start!</button>
+                <button class="btn" id="start-btn">Start!</button>
             </div>
         </section>
         <!-- Quiz Questions Screen -->
@@ -39,8 +39,13 @@
             </div>                
         </section>    
         <!-- High Score Screen -->
-        <section>
-            <div class="hide" id="feedback"
+        <section id="end-page" class="hide">        
+            <h1>Congrats!</h1>
+            <p>Final Score:<span id="final-score"></span>.</p>
+            <p>Please Enter Your Initials:</p>
+            <input type="text" id="initials" />
+            <button class="btn">Submit</button>
+            <div class="hide" id="feedback"></div>
         </section>
         
 

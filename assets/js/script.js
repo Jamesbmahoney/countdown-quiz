@@ -25,6 +25,10 @@ function quizStart() {
 function countdown() {
     time--;
     timerEl.textContent = time;
+
+    if (time <= 0) {
+        quizEnd();
+    }
 };
 
 function callQuestions() {
@@ -77,6 +81,18 @@ function questionClick() {
         callQuestions();
     }
 };
+
+function quizEnd() {
+    clearInterval(countdownTimer);
+
+    var finishEl = document.getElementById("end-page");
+    finishEl.removeAttribute("class");
+
+    var finalScoreEl = document.getElementById("#final-score");
+    finalScoreEl.textContent = time;
+
+    quizEl.setAttribute("class", "hide")
+}
 
 
 
