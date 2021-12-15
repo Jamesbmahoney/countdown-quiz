@@ -2,12 +2,14 @@ var timerEl = document.querySelector("#count-clock");
 var startEl = document.querySelector("#start-btn");
 var openingEl = document.querySelector("#start-page");
 var quizEl = document.querySelector("#quiz-questions");
-var answersEL = document.querySelector("#answer-section");
-var feedbackEL = document.querySelector("#feedback");
+var answersEl = document.querySelector("#answer-section");
+var feedbackEl = document.querySelector("#feedback");
+var initialsEl = document.querySelector("#initials");
+var submitEl = document.querySelector("#submit")
 
 var countdownTimer;
-var time =  60;
-var currentQuestionIndex = 0;
+var time = 60;
+var questionIndex = 0;
 
 function quizStart() {
     openingEl.setAttribute("class", "hide");
@@ -32,30 +34,27 @@ function countdown() {
 };
 
 function callQuestions() {
-    var quizQuestions = questions[currentQuestionIndex];
+    var quizQuestions = questions[questionIndex];
 
     var actualQuestion = document.getElementById("question-section");
-    actualQuestion.textContent = quizQuestions.question;    
+    actualQuestion.textContent = quizQuestions.question;
 
-answersEL.innerHTML= "";    
+    answersEl.innerHTML = "";
 
-quizQuestions.choice.forEach(function(choice, i){
-    var choiceBtn = document.createElement("button");
-    choiceBtn.setAttribute("class", "choice");
-    choiceBtn.setAttribute("value", choice);
+    quizQuestions.choice.forEach(function (choice, i) {
+        var choiceBtn = document.createElement("button");
+        choiceBtn.setAttribute("class", "choice");
+        choiceBtn.setAttribute("value", choice);
 
-    choiceBtn.textContent = i + 1 + ". " + choice;
-    choiceBtn.onclick = questionClick;
+        choiceBtn.textContent = i + 1 + ". " + choice;
+        choiceBtn.onclick = questionClick;
 
-    answersEL.appendChild(choiceBtn);
-});
-
-    //var currentChoicesEl = document.getElementById("answer-section");
-    //currentChoicesEl.textContent = quizQuestions.choice;       
+        answersEl.appendChild(choiceBtn);
+    });
 }
 
 function questionClick() {
-    if (this.value !== questions[currentQuestionIndex].answer) {
+    if (this.value !== questions[questionIndex].answer) {
         time -= 15;
 
         if (time < 0) {
@@ -63,19 +62,21 @@ function questionClick() {
         }
 
         timerEl.textContent = time;
-        feedbackEL.textContent = "Wrong!";      
+        feedbackEl.textContent = "Wrong!";
+        return;
+                
     } else {
-        feedbackEL.textContent = "Correct!";
+        feedbackEl.textContent = "Correct!";
     }
 
-    feedbackEL.setAttribute("class", "feedback");
+    feedbackEl.setAttribute("class", "feedback");
     setTimeout(function() {
-        feedbackEL.setAttribute("class", "feedback hide");
-    }, 1000)
+        feedbackEl.setAttribute("class", "feedback hide");
+    }, 2000);
 
-    currentQuestionIndex++;
+    questionIndex++;
 
-    if (currentQuestionIndex === questions.length) {
+    if (questionIndex === questions.length) {
         quizEnd();
     } else {
         callQuestions();
@@ -83,22 +84,35 @@ function questionClick() {
 };
 
 function quizEnd() {
+    quizEl.setAttribute("class", "hide");
+
     clearInterval(countdownTimer);
 
     var finishEl = document.getElementById("end-page");
     finishEl.removeAttribute("class");
 
     var finalScoreEl = document.getElementById("#final-score");
-    finalScoreEl.textContent = time;
-
-    quizEl.setAttribute("class", "hide")
+    finalScoreEl.textContent = time;   
 }
 
+function highScore() {
+    var initials = initialsEl.value.trim();
 
+    if (initials !== "") {
+        var finalScore = JSON.parse(window.localStorage.getItem("finalScore")) || [];
 
+        var savedScore = {
+            intials: initials,
+            score: time,
+        };
 
-  
+        finalScore.push(savedScore);
+        window.localStorage.setItem("finalScore". JSON.stringify(finalScore));
 
+        window.location.href = "/highscores.html";
+    }
+}
 
+submitEl.addEventListener("click", highScore);
 startEl.addEventListener("click", quizStart);
 
