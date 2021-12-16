@@ -15,7 +15,7 @@
     <div class="content">
         <header class="box">
             <div id="highscore">
-                <a href="/highscores.html">High Score</a>
+                <a href="./highscores.html">High Score</a>
             </div>
             <div id="timer">
                 Time: <span id="count-clock">0</span>
@@ -36,17 +36,18 @@
         <section class="hide" id="quiz-questions">
             <h3 id="question-section"></h3>            
             <div class="answer-section" id="answer-section">                
-            </div>                
+            </div> 
+            <div class="hide" id="feedback"></div>               
         </section>    
-        <!-- High Score Screen -->
-        <section id="end-page" class="hide">        
+        <!-- Quiz End Screen -->
+        <section id="end-page" class="hide">                        
             <h1>Congrats!</h1>
             <p>Final Score: <span id="final-score"></span>.</p>
             <p>Please Enter Your Initials:</p>
             <input type="text" id="initials" />
-            <button class="btn" id="submit">Submit</button>
-            <div class="hide" id="feedback"></div>
+            <button class="btn" id="submit">Submit</button>            
         </section>
+        
         
 
         <script src="./assets/js/script.js"></script>

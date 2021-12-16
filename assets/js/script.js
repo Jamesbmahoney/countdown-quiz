@@ -67,12 +67,12 @@ function questionClick() {
                 
     } else {
         feedbackEl.textContent = "Correct!";
-    }
+    }   
 
     feedbackEl.setAttribute("class", "feedback");
     setTimeout(function() {
         feedbackEl.setAttribute("class", "feedback hide");
-    }, 2000);
+    }, 1000);
 
     questionIndex++;
 
@@ -89,11 +89,11 @@ function quizEnd() {
     clearInterval(countdownTimer);
 
     var finishEl = document.getElementById("end-page");
-    finishEl.removeAttribute("class");
+    finishEl.setAttribute("class", "show");
 
-    var finalScoreEl = document.getElementById("#final-score");
+    var finalScoreEl = document.getElementById("final-score");
     finalScoreEl.textContent = time;   
-}
+};
 
 function highScore() {
     var initials = initialsEl.value.trim();
@@ -107,11 +107,11 @@ function highScore() {
         };
 
         finalScore.push(savedScore);
-        window.localStorage.setItem("finalScore". JSON.stringify(finalScore));
+        window.localStorage.setItem("finalScore", JSON.stringify(finalScore));
 
-        window.location.href = "/highscores.html";
+        window.location.href = "highscores.html";
     }
-}
+};
 
 submitEl.addEventListener("click", highScore);
 startEl.addEventListener("click", quizStart);
