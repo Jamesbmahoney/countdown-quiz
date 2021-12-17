@@ -26,8 +26,7 @@ section {
 .btn {
     padding: 10px 0;
     width: 150px;
-    text-align: center;
-    margin-bottom: 1px;
+    text-align: center;   
     text-decoration: none;
     color: black;
     background: wheat;
@@ -36,7 +35,7 @@ section {
     margin: 0 auto;
 }
 
-.btn:hover {
+.btn:hover, .btn-2:hover {
     cursor: pointer;
     box-shadow: 0 5px 5px 0 grey;     
 }
@@ -44,8 +43,7 @@ section {
 .btn-2 {
     padding: 10px 0;
     width: auto;
-    text-align: center;
-    margin-bottom: 1px;
+    text-align: center;    
     text-decoration: none;
     color: black;
     background: wheat;
