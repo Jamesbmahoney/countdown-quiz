@@ -41,6 +41,18 @@ section {
     box-shadow: 0 5px 5px 0 grey;     
 }
 
+.btn-2 {
+    padding: 10px 0;
+    width: auto;
+    text-align: center;
+    margin-bottom: 1px;
+    text-decoration: none;
+    color: black;
+    background: wheat;
+    border-radius: 20px;
+    display: block;
+    margin: 0 auto;
+}    
 
 h1 {
      text-align: center;

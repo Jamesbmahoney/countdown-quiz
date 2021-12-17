@@ -18,7 +18,7 @@ function quizStart() {
 
     countdownTimer = setInterval(countdown, 1000);
 
-    timerEl.textContent = time;
+    //timerEl.textContent = time;
 
     callQuestions();
 
@@ -43,7 +43,7 @@ function callQuestions() {
 
     quizQuestions.choice.forEach(function (choice, i) {
         var choiceBtn = document.createElement("button");
-        choiceBtn.setAttribute("class", "choice");
+        choiceBtn.setAttribute("class", "choice btn-2");
         choiceBtn.setAttribute("value", choice);
 
         choiceBtn.textContent = i + 1 + ". " + choice;
@@ -64,13 +64,13 @@ function questionClick() {
         timerEl.textContent = time;
         feedbackEl.textContent = "Wrong!";
         return;
-                
+
     } else {
         feedbackEl.textContent = "Correct!";
-    }   
+    }
 
     feedbackEl.setAttribute("class", "feedback");
-    setTimeout(function() {
+    setTimeout(function () {
         feedbackEl.setAttribute("class", "feedback hide");
     }, 1000);
 
@@ -92,27 +92,31 @@ function quizEnd() {
     finishEl.setAttribute("class", "show");
 
     var finalScoreEl = document.getElementById("final-score");
-    finalScoreEl.textContent = time;   
+    finalScoreEl.textContent = time;
 };
 
 function highScore() {
     var initials = initialsEl.value.trim();
 
     if (initials !== "") {
-        var finalScore = JSON.parse(window.localStorage.getItem("finalScore")) || [];
+        var finalScore = JSON.parse(localStorage.getItem("finalScore")) || [];
 
         var savedScore = {
-            intials: initials,
-            score: time,
+            initials: initials,
+            score: time
         };
 
         finalScore.push(savedScore);
-        window.localStorage.setItem("finalScore", JSON.stringify(finalScore));
+        localStorage.setItem("finalScore", JSON.stringify(finalScore));       
 
-        window.location.href = "highscores.html";
-    }
+        location.href = "highscores.html";
+
+        finalScore = JSON.parse(localStorage.getItem("finalScore")) || [];
+        console.log(finalScore);
+    };
 };
 
 submitEl.addEventListener("click", highScore);
 startEl.addEventListener("click", quizStart);
+
 
