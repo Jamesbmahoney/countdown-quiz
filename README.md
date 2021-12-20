@@ -13,7 +13,7 @@ A quiz built in HTML that operated with both a countdown and an ability to save 
 <img src="./assets/images/CQ_1.jpg" />
 <img src="./assets/images/CQ_2.jpg" />
 <img src="./assets/images/CQ_3.jpg" />
-<img src="./assets/images/CQ_$.jpg" />
+<img src="./assets/images/CQ_4.jpg" />
 
 ## Deployed Website
 https://jamesbmahoney.github.io/countdown-quiz/highscores.html
