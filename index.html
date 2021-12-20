@@ -8,49 +8,47 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
-
-
 <body>
-    <!-- High Score Link and Timer -->
-    <div class="content">
-        <header class="box">
-            <div id="highscore">
-                <a href="./highscores.html">High Score</a>
-            </div>
-            <div id="timer">
-                Time: <span id="count-clock">0</span>
-            </div>
-        </header class="header" id="header">   
-        <!-- Quiz Start Screen -->
-        <section class="show" id="start-page">
-            <div>
-                <h1>Welcome to the Countdown Quiz!</h1>
-                <p>Answer all five questions within the time limit.
-                    Any incorrect answer will take 10 seconds off your time.
-                    At the end, record your initials along with your high score! 
-                </p>
-                <button class="btn" id="start-btn">Start!</button>
-            </div>
-        </section>
-        <!-- Quiz Questions Screen -->
-        <section class="hide" id="quiz-questions">
-            <h3 id="question-section"></h3>            
-            <div class="answer-section" id="answer-section">                
-            </div> 
-            <div class="hide" id="feedback"></div>               
-        </section>    
-        <!-- Quiz End Screen -->
-        <section id="end-page" class="hide">                        
-            <h1>Congrats!</h1>
-            <p>Final Score: <span id="final-score"></span>.</p>
-            <p>Please Enter Your Initials:</p>
-            <input type="text" id="initials"/>
-            <button class="btn" id="submit">Submit</button>            
-        </section>
-        
-        
+    <!-- High Score Link and Timer -->    
+    <header class="box">
+        <div id="highscore">
+            <a href="./highscores.html">High Score</a>
+        </div>
+        <div id="timer">
+            Time: <span id="count-clock">0</span>
+        </div>
+    </header class="header" id="header">
 
-        <script src="./assets/js/script.js"></script>
-        <script src="./assets/js/questions.js"></script>
+    <!-- Quiz Start Screen -->
+    <section class="show" id="start-page">
+        <div>
+            <h1>Welcome to the Countdown Quiz!</h1>
+            <p>Answer all five questions within the time limit.
+                Any incorrect answer will take 10 seconds off your time.
+                At the end, record your initials along with your high score! 
+            </p>
+            <button class="btn" id="start-btn">Start!</button>
+        </div>
+    </section>
+
+    <!-- Quiz Questions Screen -->
+    <section class="hide" id="quiz-questions">
+        <h3 id="question-section"></h3>            
+        <div class="answer-section" id="answer-section">                
+        </div> 
+        <div class="hide" id="feedback"></div>               
+    </section> 
+
+    <!-- Quiz End Screen -->
+    <section id="end-page" class="hide">                        
+        <h1>Congrats!</h1>
+        <p>Final Score: <span id="final-score"></span>.</p>
+        <p>Please Enter Your Initials:</p>
+        <input type="text" id="initials"/>
+        <button class="btn" id="submit">Submit</button>            
+    </section>      
+        
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/questions.js"></script>
 </body>
 </html>
