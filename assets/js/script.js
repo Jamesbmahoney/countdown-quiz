@@ -55,7 +55,7 @@ function callQuestions() {
 
 function questionClick() {
     if (this.value !== questions[questionIndex].answer) {
-        time -= 15;
+        time -= 10;
 
         if (time < 0) {
             time = 0;
@@ -72,7 +72,7 @@ function questionClick() {
     feedbackEl.setAttribute("class", "feedback");
     setTimeout(function () {
         feedbackEl.setAttribute("class", "feedback hide");
-    }, 1000);
+    }, 120000);
 
     questionIndex++;
 
